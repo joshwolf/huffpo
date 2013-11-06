@@ -37,6 +37,6 @@ Auctioneer calls the auction (when s/he makes the judgement on her own that ther
 
 Participant/Auctioneer queries the latest action of an item by item name. The library should return the status of the auction if there is any, if the item is sold, it should return the information regarding the price sold and to whom it was sold to.
 
-ASSUMPTIONS/ADJUSTMENTS: I'm not validating item name uniqueness. I used SecureRandom to generate guids for things. I also stored info on auctions in a simple hash in AuctionHouse. I'm also returning leading bid info on open auctions as well as winning bids on closed ones.
+ASSUMPTIONS/ADJUSTMENTS: I'm not validating item name uniqueness because an item can have multiple auctions and we're not storing items separately from auctions. I used SecureRandom to generate guids for things. I also stored info on auctions in a simple hash in AuctionHouse. I'm also returning leading bid info on open auctions as well as winning bids on closed ones.
 
 TO TEST: run auction_test.rb
