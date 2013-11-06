@@ -5,6 +5,7 @@ josh = Participant.new('Josh')
 item = Item.new('Book')
 
 auction = Auction.new(item,10)
+another_auction = Auction.new(item,100)
 
 #should fail
 josh.bid(auction,10)
@@ -22,3 +23,11 @@ auction.close
 #should fail
 josh.bid(auction,20)
 
+another_auction.open
+
+josh.bid(another_auction,10)
+#should mark auction as failure
+another_auction.close
+
+#should fail
+another_auction.open
