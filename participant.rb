@@ -6,5 +6,9 @@ class Participant
     def initialize(name)
         @id = SecureRandom.uuid
         @name = name
-    end 
+    end
+    
+    def bid(auction, amount)
+        my_bid = Bid.new(auction, self, amount)
+    end
 end

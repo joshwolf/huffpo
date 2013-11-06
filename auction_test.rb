@@ -1,14 +1,24 @@
 require_relative 'bid'
 
-me = Participant.new('Josh')
+josh = Participant.new('Josh')
 
 item = Item.new('Book',10)
 
 auction = Auction.new(item)
 
 #should fail
-bid = Bid.new(auction,me,10)
+josh.bid(auction,10)
+
 auction.open
-bid = Bid.new(auction,me,10)
+josh.bid(auction,10)
+
+susan = Participant.new('Susan')
+susan.bid(auction,15)
+
 #should fail
-bid = Bid.new(auction,me,5)
+josh.bid(auction,15)
+
+auction.close
+#should fail
+josh.bid(auction,20)
+
