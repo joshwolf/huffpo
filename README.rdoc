@@ -10,3 +10,5 @@ Given an array of unsorted positive ints, write a function that finds runs of 3 
 function findConsecutiveRuns(input:Array):Array
 Example:  [1, 2, 3, 5, 10, 9, 8, 9, 10, 11, 7] would return [0, 4, 6, 7]
 
+TO RUN: run array_runs.rb with csv of integers as argument
+	ex: ruby array_runs.rb 1,2,3,5,10,9,8,9,10,11,7
