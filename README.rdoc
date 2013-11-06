@@ -11,7 +11,8 @@ function findConsecutiveRuns(input:Array):Array
 Example:  [1, 2, 3, 5, 10, 9, 8, 9, 10, 11, 7] would return [0, 4, 6, 7]
 
 TO RUN: run array_runs.rb with csv of integers as argument
-	ex: ruby array_runs.rb 1,2,3,5,10,9,8,9,10,11,7
+
+ex: ruby array_runs.rb 1,2,3,5,10,9,8,9,10,11,7
 	
 ======
 
@@ -36,5 +37,6 @@ Auctioneer calls the auction (when s/he makes the judgement on her own that ther
 
 Participant/Auctioneer queries the latest action of an item by item name. The library should return the status of the auction if there is any, if the item is sold, it should return the information regarding the price sold and to whom it was sold to.
 
-ASSUMPTIONS/ADJUSTMENTS: I used SecureRandom to generate guids for things. I also stored info on auctions in a simple hash in AuctionHouse.
+ASSUMPTIONS/ADJUSTMENTS: I used SecureRandom to generate guids for things. I also stored info on auctions in a simple hash in AuctionHouse. I'm also returning leading bid info on open auctions as well as winning bids on closed ones.
+
 TO TEST: run auction_test.rb
