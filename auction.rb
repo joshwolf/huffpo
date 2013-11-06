@@ -24,6 +24,10 @@ class Auction
         @has_failed
     end
     
+    def status
+        if is_open? then 'open' else 'closed' end
+    end
+    
     def open
         if has_failed?
             @@logger.error "Cannot open, this auction has already failed"
