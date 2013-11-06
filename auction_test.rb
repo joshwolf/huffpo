@@ -1,11 +1,12 @@
 require_relative 'bid'
+require_relative 'auction_house'
 
+auction_house = AuctionHouse.new
 josh = Participant.new('Josh')
 
 item = Item.new('Book')
 
-auction = Auction.new(item,10)
-another_auction = Auction.new(item,100)
+auction = auction_house.add_auction(item,10)
 
 #should fail
 josh.bid(auction,10)
@@ -23,6 +24,8 @@ auction.close
 #should fail
 josh.bid(auction,20)
 
+another_auction = auction_house.add_auction(item,100)
+
 another_auction.open
 
 josh.bid(another_auction,10)
@@ -31,3 +34,6 @@ another_auction.close
 
 #should fail
 another_auction.open
+
+#should fail because auction previously failed
+yet_another_auction = auction_house.add_auction(item,1000)

@@ -26,7 +26,7 @@ class Auction
     
     def open
         if has_failed?
-            @@logger.error "Cannot open, auction has already failed"
+            @@logger.error "Cannot open, this auction has already failed"
         else
             @is_open = true
         end
