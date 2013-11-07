@@ -1,5 +1,8 @@
 require_relative 'bid'
 require_relative 'auction_house'
+require 'logger'
+
+@@logger = Logger.new(STDOUT)
 
 auction_house = AuctionHouse.new
 josh = Participant.new('Josh')
@@ -15,7 +18,7 @@ auction.open
 josh.bid(auction,10)
 
 #show most recent auction
-puts auction_house.most_recent_auction_info('Book')
+@@logger.info(auction_house.most_recent_auction_info('Book'))
 
 susan = Participant.new('Susan')
 susan.bid(auction,15)
@@ -28,7 +31,7 @@ auction.close
 josh.bid(auction,20)
 
 #show most recent auction
-puts auction_house.most_recent_auction_info('Book')
+@@logger.info(auction_house.most_recent_auction_info('Book'))
 
 another_auction = auction_house.add_auction(item,100)
 
@@ -45,5 +48,5 @@ another_auction.open
 yet_another_auction = auction_house.add_auction(item,1000)
 
 #show most recent auction
-puts auction_house.most_recent_auction_info('Book')
+@@logger.info(auction_house.most_recent_auction_info('Book'))
 
