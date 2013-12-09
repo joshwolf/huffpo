@@ -1,5 +1,4 @@
-Stuff for Huffington Post
-
+Ruby problems
 
 in array_runs.rb:
 
